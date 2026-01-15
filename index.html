@@ -5,42 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeFit Coach</title>
     <style>
-    /* side-by-side media row */
-    .media-row { display: flex; gap: 16px; align-items: flex-start; margin: 1rem 0; }
-    .media-row .media { flex: 1; min-width: 0; }
-    .media-row img, .media-row video { width: 100%; height: auto; display: block; border-radius: 6px; }
-    @media (max-width: 700px) {
-      .media-row { flex-direction: column; }
-    }
-  </style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .poster {
+            max-width: 90%;
+            height: auto;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .video-container {
+            max-width: 90%;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <h1>HomeFit Coach</h1>
-        <p>Your home workout companion, powered by FitBot</p>
+        <p>Your home fitness journey starts here!</p>
     </header>
 
-    <section class="media-row" aria-label="HomeFit media">
-    <div class="media">
-      <video controls>
-        <source src="HomeFit%20Coach%20%28Cartoon%20Unc%29.mp4" type="video/mp4">
-        Your browser does not support the video element.
-      </video>
+    <!-- Poster Section -->
+    <img src="gym-fitness-poster.png" alt="HomeFit Coach Poster" class="poster">
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video controls>
+            <source src="homefit-coach.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-    <div class="media">
-      <img src="gym%20fitness%20%28Poster%29.png" alt="Gym fitness poster">
-    </div>
-  </section>
 
     <footer>
         <p>&copy; 2026 HomeFit Coach. All rights reserved.</p>
     </footer>
 
-    <!-- Botpress Chatbot Scripts -->
+    <!-- Optional: FitBot Chatbot Scripts -->
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/01/15/03/20260115032140-SGGUGUOK.js" defer></script>
 
 </body>
 </html>
-
