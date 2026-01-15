@@ -33,18 +33,22 @@
             gap: 20px; /* space between poster and video */
         }
 
-        .poster, .video-container {
-            flex: 1 1 300px; /* smaller min width */
-            max-width: 400px; /* make them smaller */
-            max-height: 200px; /* constrain height for landscape layout */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            object-fit: cover; /* maintain poster aspect ratio */
-        }
-
+        /* Poster keeps natural height */
         .poster {
             width: 100%;
-            height: 100%;
+            height: auto;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Video constrained to smaller height */
+        .video-container {
+            flex: 1 1 300px;
+            max-width: 400px;
+            max-height: 250px; /* smaller video height */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .video-container video {
@@ -95,7 +99,6 @@
                 <source src="homefit-coach.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </div>
     </div>
 
     <footer>
