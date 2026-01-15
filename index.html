@@ -24,25 +24,31 @@
             font-size: 2.5em;
         }
 
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            gap: 30px; /* space between poster and video */
+        }
+
+        .poster, .video-container {
+            flex: 1 1 400px; /* responsive minimum width */
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .poster {
-            max-width: 90%;
-            height: auto;
-            margin: 40px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .video-container {
-            max-width: 90%;
-            margin: 40px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        video {
             width: 100%;
             height: auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         footer {
@@ -51,6 +57,22 @@
             padding: 20px;
             margin-top: 50px;
         }
+
+        button {
+            margin-top: 20px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #187bcd;
+        }
+
     </style>
 </head>
 <body>
@@ -60,22 +82,27 @@
         <p>Your home fitness journey starts here!</p>
     </header>
 
-    <!-- Poster Section -->
-    <img src="gym-fitness-poster.png" alt="HomeFit Coach Poster" class="poster">
+    <!-- Side by Side Poster and Video -->
+    <div class="content-container">
+        <!-- Poster -->
+        <img src="gym-fitness-poster.png" alt="HomeFit Coach Poster" class="poster">
 
-    <!-- Video Section -->
-    <div class="video-container">
-        <video controls>
-            <source src="homefit-coach.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- Video -->
+        <div class="video-container">
+            <video controls>
+                <source src="homefit-coach.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Optional Chat Button -->
+            <button onclick="window.botpressWebChat.sendEvent({type: 'show'})">Chat with FitBot</button>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2026 HomeFit Coach. All rights reserved.</p>
     </footer>
 
-    <!-- Optional: FitBot Chatbot Scripts -->
+    <!-- FitBot Chatbot Scripts -->
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/01/15/03/20260115032140-SGGUGUOK.js" defer></script>
 
