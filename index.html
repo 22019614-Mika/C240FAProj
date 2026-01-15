@@ -10,56 +10,42 @@
             margin: 0;
             background-color: #f5f7fa;
             color: #333;
-            text-align: center;
         }
 
         header {
             background-color: #1e90ff;
             color: white;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .content-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 40px 20px;
-            gap: 30px; /* space between poster and video */
-        }
-
-        .poster, .video-container {
-            flex: 1 1 400px; /* responsive minimum width */
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .poster {
-            width: 100%;
-            height: auto;
-        }
-
-        .video-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
             padding: 20px;
-            margin-top: 50px;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .video-section video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         button {
-            margin-top: 20px;
             background-color: #1e90ff;
             color: white;
             border: none;
@@ -73,34 +59,66 @@
             background-color: #187bcd;
         }
 
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>HomeFit Coach</h1>
-        <p>Your home fitness journey starts here!</p>
+        <p>Your home workout companion, powered by FitBot</p>
     </header>
 
-    <!-- Side by Side Poster and Video -->
-    <div class="content-container">
-        <!-- Poster -->
-        <img src="gym-fitness-poster.png" alt="HomeFit Coach Poster" class="poster">
+    <section>
+        <div class="card">
+            <h2>Welcome to HomeFit Coach</h2>
+            <p>
+                HomeFit Coach helps you stay active and motivated with simple home workouts,
+                easy fitness plans, and friendly guidance—no gym required.
+            </p>
+        </div>
 
-        <!-- Video -->
-        <div class="video-container">
+        <div class="card">
+            <h2>Meet FitBot</h2>
+            <p>
+                FitBot is your friendly workout buddy. Ask for workout tips, beginner plans,
+                or motivation, and FitBot will guide you every step of the way.
+            </p>
+            <button onclick="window.botpressWebChat.sendEvent({ type: 'show' })">
+                Start Chatting with FitBot
+            </button>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2>See FitBot in Action</h2>
             <video controls>
-                <source src="homefit-coach.mp4" type="video/mp4">
+                <source src="fitbot_intro.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-    </div>
+
+        <div class="card">
+            <h2>What You’ll Get</h2>
+            <ul>
+                <li>Home workouts with little or no equipment</li>
+                <li>Beginner-friendly fitness plans</li>
+                <li>Motivational support to stay consistent</li>
+                <li>Simple, easy-to-follow guidance</li>
+            </ul>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 HomeFit Coach. All rights reserved.</p>
     </footer>
 
-    <!-- FitBot Chatbot Scripts -->
+    <!-- Botpress Chatbot Scripts -->
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/01/15/03/20260115032140-SGGUGUOK.js" defer></script>
 
