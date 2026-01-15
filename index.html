@@ -5,55 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeFit Coach</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f5f7fa;
-            color: #333;
-        }
-
-        header {
-            background-color: #1e90ff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        button {
-            background-color: #1e90ff;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #187bcd;
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    /* side-by-side media row */
+    .media-row { display: flex; gap: 16px; align-items: flex-start; margin: 1rem 0; }
+    .media-row .media { flex: 1; min-width: 0; }
+    .media-row img, .media-row video { width: 100%; height: auto; display: block; border-radius: 6px; }
+    @media (max-width: 700px) {
+      .media-row { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
@@ -62,33 +21,17 @@
         <p>Your home workout companion, powered by FitBot</p>
     </header>
 
-    <section>
-        <div class="card">
-            <h2>Welcome to HomeFit Coach</h2>
-            <p>
-                HomeFit Coach helps you stay active and motivated with simple home workouts,
-                easy fitness plans, and friendly guidance—no gym required.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Meet FitBot</h2>
-            <p>
-                FitBot is your friendly workout buddy. Ask for workout tips, beginner plans,
-                or motivation, and FitBot will guide you every step of the way.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>What You’ll Get</h2>
-            <ul>
-                <li>Home workouts with little or no equipment</li>
-                <li>Beginner-friendly fitness plans</li>
-                <li>Motivational support to stay consistent</li>
-                <li>Simple, easy-to-follow guidance</li>
-            </ul>
-        </div>
-    </section>
+    <section class="media-row" aria-label="HomeFit media">
+    <div class="media">
+      <video controls>
+        <source src="HomeFit%20Coach%20%28Cartoon%20Unc%29.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </div>
+    <div class="media">
+      <img src="gym%20fitness%20%28Poster%29.png" alt="Gym fitness poster">
+    </div>
+  </section>
 
     <footer>
         <p>&copy; 2026 HomeFit Coach. All rights reserved.</p>
