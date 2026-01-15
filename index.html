@@ -16,63 +16,57 @@
         header {
             background-color: #1e90ff;
             color: white;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
         h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 2.5em;
         }
 
         .content-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            padding: 30px 20px;
-            gap: 20px; /* space between poster and video */
+            align-items: flex-start;
+            padding: 40px 20px;
+            gap: 30px; /* space between poster and video */
         }
 
-        /* Poster keeps natural height */
+        .poster, .video-container {
+            flex: 1 1 400px; /* responsive minimum width */
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .poster {
             width: 100%;
             height: auto;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        /* Video constrained to smaller height */
-        .video-container {
-            flex: 1 1 300px;
-            max-width: 400px;
-            max-height: 250px; /* smaller video height */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .video-container video {
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: 10px;
         }
 
         footer {
             background-color: #222;
             color: white;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 50px;
         }
 
         button {
-            margin-top: 10px;
+            margin-top: 20px;
             background-color: #1e90ff;
             color: white;
             border: none;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         button:hover {
@@ -91,14 +85,15 @@
     <!-- Side by Side Poster and Video -->
     <div class="content-container">
         <!-- Poster -->
-        <img src="gym-fitness-poster.png" alt="HomeFit Coach Poster" class="poster">
+        <img src="poster.jpg" alt="HomeFit Coach Poster" class="poster">
 
         <!-- Video -->
         <div class="video-container">
             <video controls>
-                <source src="homefit-coach.mp4" type="video/mp4">
+                <source src="fitbot_intro.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div>
     </div>
 
     <footer>
